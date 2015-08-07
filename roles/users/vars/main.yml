@@ -1,0 +1,4 @@
+---
+# List of users. Name the public key user_name.pub
+users:
+  - cpatrick
