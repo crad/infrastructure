@@ -1,41 +1,21 @@
 ---
-# Mongo needs to be running before Girder or else Girder fails to start
-- name: Mongo
-  user: ubuntu
-  hosts: tag_type_mongodb
-  gather_facts: false
-  roles:
-    - users
-    - common
-    - mongodb
-
 
 - name: Girder
   user: ubuntu
   hosts: tag_type_girder
   gather_facts: false
   vars:
-    girder_admin_user: covalic
+    girder_admin_user: cpatrick
     # need to pass this in externally
     #girder_admin_password:
-    girder_admin_email: covalic-aws@kitware.com
+    girder_admin_email: patrick.reynolds@kitware.com
     girder_socket_host: localhost
     girder_socket_port: 8080
-    girder_plugins: ['celery_jobs', 'challenge', 'covalic', 'jobs']
-    girder_celery_user: celery
-    # need to pass this in externally
-    #girder_celery_password:
-    girder_celery_email: covalic-celery@kitware.com
+    girder_plugins: []
+
   roles:
     - users
     - common
+    - mongodb
     - girder
 
-- name: Celery
-  user: ubuntu
-  hosts: tag_type_celery
-  gather_facts: false
-  roles:
-    - users
-    - common
-    - celery

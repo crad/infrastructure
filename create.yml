@@ -8,7 +8,7 @@
     - pub_key_name: radiomics-girder
     - ami: ami-76e27e1e
     - ec2_instance_type: t2.medium
-    - girder_eip: 52.25.204.241
+    - girder_eip: 54.174.35.141
 
   tasks:
 
@@ -62,7 +62,7 @@
         exact_count: 1
         count_tag:
            Name: girder-radiomics
-        id: girder-radiomics
+        id: girder-radiomics-devel
         instance_tags:
            Name: girder-radiomics
            type: girder

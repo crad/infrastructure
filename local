@@ -1,2 +1,2 @@
 [local]
-localhost
+127.0.0.1 ansible_python_interpreter=PATH_TO_PYTHON # workaround an ansible issue
