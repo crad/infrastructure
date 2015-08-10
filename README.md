@@ -2,7 +2,7 @@
 
 ## Shell into the instance as ubuntu
 
-    ssh -i radiomic-girder.pem ubuntu@data.radiomics.io
+    ssh -i radiomics-girder.pem ubuntu@data.radiomics.io
 
 ## To provision
 
