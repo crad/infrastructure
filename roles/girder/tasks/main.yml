@@ -36,6 +36,20 @@
     - girder
     - girder-update
 
+- name: setup logging for girder
+  template: src=girder.local.cfg.j2 dest={{ girder_root }}/girder/conf/girder.local.cfg
+  tags:
+    - girder
+
+- name: create the log directory for girder
+  file: path=/var/log/girder
+        owner=www-data
+        group=developers
+        mode=0770
+        state=directory
+  sudo: yes
+  tags: girder
+
 - name: run npm install for the XTK plugin
   npm: path={{ girder_root }}/plugins/xtk_demo
   tags:
