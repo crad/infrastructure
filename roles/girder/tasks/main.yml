@@ -24,6 +24,11 @@
     - git
   tags: girder
 
+- name: install bower
+  npm: name=bower global=yes
+  sudo: yes
+  tags: girder
+
 - name: clone girder
   git: repo=git://github.com/girder/girder.git dest={{ girder_root }} accept_hostkey=yes
   tags:
@@ -32,6 +37,12 @@
 
 - name: clone XTK plugin
   git: repo=git://github.com/zachmullen/xtk_demo.git dest={{ girder_root }}/plugins/xtk_demo accept_hostkey=yes
+  tags:
+    - girder
+    - girder-update
+
+- name: clone Cornerstone plugin
+  git: repo=git://github.com/cpatrick/cornerstone_demo.git dest={{ girder_root }}/plugins/cornerstone_demo accept_hostkey=yes
   tags:
     - girder
     - girder-update
@@ -52,6 +63,12 @@
 
 - name: run npm install for the XTK plugin
   npm: path={{ girder_root }}/plugins/xtk_demo
+  tags:
+    - girder
+    - girder-update
+
+- name: run bower install for the cornerstone plugin
+  bower: path={{ girder_root }}/plugins/cornerstone_demo
   tags:
     - girder
     - girder-update
