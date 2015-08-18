@@ -11,7 +11,7 @@
     girder_admin_email: patrick.reynolds@kitware.com
     girder_socket_host: localhost
     girder_socket_port: 8080
-    girder_plugins: []
+    girder_plugins: ['xtk_demo', 'cornerstone_demo', 'oauth']
 
   roles:
     - users
